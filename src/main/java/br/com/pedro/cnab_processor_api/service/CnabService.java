@@ -50,7 +50,7 @@ public class CnabService {
         transacao.setCartao(linha.substring(30, 42));
         transacao.setHora(LocalTime.parse(linha.substring(42, 48), DateTimeFormatter.ofPattern("HHmmss")));
         transacao.setDonoLoja(linha.substring(48, 62).trim());
-        transacao.setNomeLoja(linha.substring(62, 81));
+        transacao.setNomeLoja(linha.substring(62).trim());
 
         return transacao;
     }
