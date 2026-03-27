@@ -30,6 +30,7 @@ public class CnabService {
             while (nonNull(linha)) {
                 Transacao transacao = parseLinha(linha);
                 transacaoRepository.save(transacao);
+                linha = br.readLine();
             }
         } catch (IOException err) {
             err.printStackTrace();
